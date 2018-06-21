@@ -7,12 +7,12 @@ class Selector extends Component{
 	    this.state = { data };
 	    this.handleChange = this.handleChange.bind(this)
 	}
+	handleDate() {
+		console.log('Age is conuting...')
+	}
 	handleChange(e) {
 		let country = e.target.value
 		let expectancy = e.target.value
-		console.log(e.target)
-		console.log(country)
-		console.log(expectancy)
 		this.props.onChange(country, expectancy)
 	}
 	render() {
@@ -33,6 +33,8 @@ class Selector extends Component{
 	        	<div>
 	        		<h3>The average life expectancy in your country is {this.props.expectancy.substr(this.props.expectancy.length - 4)}</h3>
 	        	</div>
+	        	<h1>Enter your birth date</h1>
+            	<input type="date" id="date" min="1900-01-01" onChange={this.handleDate} />
 			</div>
 			
 		)
